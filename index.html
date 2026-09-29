@@ -92,6 +92,10 @@
     document.getElementById("buy-button").addEventListener("click", function () {
 
       Paddle.Checkout.open({
+        customData: {
+          course: "digital-success-course"
+        },
+
         items: [
           {
             priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
