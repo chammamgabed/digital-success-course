@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Digital Success Course</title>
-
   <style>
     body {
       margin: 0;
@@ -73,7 +71,7 @@
       <a
         id="course-button"
         class="course-button"
-        href="course.html"
+        href="#"
         style="display:none;"
       >
         Access Your Course
@@ -83,9 +81,7 @@
   </div>
 
   <script>
-
     const params = new URLSearchParams(window.location.search);
-
     const transactionId = params.get("transaction_id");
 
     const status = document.getElementById("status");
@@ -112,6 +108,10 @@
           status.textContent =
             "Payment verified. Your course is ready.";
 
+          courseButton.href =
+            "https://paddle-webhook-q8oi.onrender.com/course?transaction_id="
+            + encodeURIComponent(transactionId);
+
           courseButton.style.display = "inline-block";
 
         } else {
@@ -131,9 +131,7 @@
           "Unable to verify payment. Please try again.";
 
       });
-
     }
-
   </script>
 
 </body>
