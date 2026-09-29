@@ -1,7 +1,12 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Digital Success Course</title>  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Digital Success Course</title>
+
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -51,27 +56,35 @@
     #buy-button:hover {
       opacity: 0.85;
     }
-  </style></head><body>  <div class="container">
-    <div class="card">  <h1>Digital Success Course</h1>
+  </style>
+</head>
 
-  <p>
-    Learn practical strategies and tools to build and grow
-    your digital business.
-  </p>
+<body>
 
-  <div class="price">$15</div>
+  <div class="container">
+    <div class="card">
 
-  <button id="buy-button">
-    Buy Now
-  </button>
+      <h1>Digital Success Course</h1>
 
-</div>
+      <p>
+        Learn practical strategies and tools to build and grow
+        your digital business.
+      </p>
 
-  </div>  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>  <script>
-    Paddle.Environment.set("sandbox");
+      <div class="price">$25</div>
 
+      <button id="buy-button">
+        Buy Now
+      </button>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+  <script>
     Paddle.Initialize({
-      token: "test_d30709c5056adb6dfc8339e6d20",
+      token: "live_4173dcffcf5df911130a3c02ded",
 
       eventCallback: function (data) {
 
@@ -102,7 +115,7 @@
 
           items: [
             {
-              priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
+              priceId: "pri_01m3ptrb0sfkqp66sa4e7xkymc",
               quantity: 1
             }
           ]
@@ -110,5 +123,7 @@
         });
 
       });
-  </script></body>
+  </script>
+
+</body>
 </html>
