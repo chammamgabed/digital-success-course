@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Digital Success Course</title>
 
   <style>
@@ -89,14 +90,20 @@
     });
 
     document.getElementById("buy-button").addEventListener("click", function () {
+
       Paddle.Checkout.open({
         items: [
           {
             priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
             quantity: 1
           }
-        ]
+        ],
+
+        settings: {
+          successUrl: "https://chammamgabed.github.io/digital-success-course/success.html"
+        }
       });
+
     });
   </script>
 
