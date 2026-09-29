@@ -86,30 +86,41 @@
     Paddle.Environment.set("sandbox");
 
     Paddle.Initialize({
-      token: "test_d30709c5056adb6dfc8339e6d20"
-    });
+      token: "test_d30709c5056adb6dfc8339e6d20",
 
-    document.getElementById("buy-button").addEventListener("click", function () {
+      eventCallback: function (data) {
 
-      Paddle.Checkout.open({
-        customData: {
-          course: "digital-success-course"
-        },
+        if (data.name === "checkout.completed") {
 
-        items: [
-          {
-            priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
-            quantity: 1
-          }
-        ],
+          const transactionId = data.data.transaction_id;
 
-        settings: {
-          successUrl:
-            "https://chammamgabed.github.io/digital-success-course/success.html"
+          window.location.href =
+            "https://chammamgabed.github.io/digital-success-course/success.html?transaction_id="
+            + encodeURIComponent(transactionId);
         }
-      });
-
+      }
     });
+
+    document
+      .getElementById("buy-button")
+      .addEventListener("click", function () {
+
+        Paddle.Checkout.open({
+
+          customData: {
+            course: "digital-success-course"
+          },
+
+          items: [
+            {
+              priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
+              quantity: 1
+            }
+          ]
+
+        });
+
+      });
   </script>
 
 </body>
