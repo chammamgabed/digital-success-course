@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Success Course</title>
 
+  <!-- Paddle.js -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -78,6 +81,28 @@
 
     </div>
   </div>
+
+  <script>
+    // Use Paddle Sandbox for testing
+    Paddle.Environment.set("sandbox");
+
+    // Initialize Paddle
+    Paddle.Initialize({
+      token: "YOUR_CLIENT_SIDE_TOKEN"
+    });
+
+    // Open Paddle Checkout
+    document.getElementById("buy-button").addEventListener("click", function () {
+      Paddle.Checkout.open({
+        items: [
+          {
+            priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
+            quantity: 1
+          }
+        ]
+      });
+    });
+  </script>
 
 </body>
 </html>
