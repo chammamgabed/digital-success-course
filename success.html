@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Digital Success Course</title>
+  <title>Payment Successful - Digital Success Course</title>
 
   <style>
     body {
@@ -12,24 +12,24 @@
       font-family: Arial, sans-serif;
       background: #f5f7fb;
       color: #222;
+      text-align: center;
     }
 
     .container {
       max-width: 700px;
-      margin: 80px auto;
-      padding: 40px 20px;
-      text-align: center;
+      margin: 100px auto;
+      padding: 20px;
     }
 
     .card {
       background: white;
-      padding: 40px;
+      padding: 45px 30px;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
     h1 {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     p {
@@ -37,24 +37,15 @@
       line-height: 1.6;
     }
 
-    .price {
-      font-size: 32px;
-      font-weight: bold;
-      margin: 25px 0;
-    }
-
-    #buy-button {
+    .course-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 30px;
       background: #111;
       color: white;
-      border: none;
-      padding: 15px 35px;
-      font-size: 18px;
+      text-decoration: none;
       border-radius: 8px;
-      cursor: pointer;
-    }
-
-    #buy-button:hover {
-      opacity: 0.85;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -64,55 +55,22 @@
   <div class="container">
     <div class="card">
 
-      <h1>Digital Success Course</h1>
+      <h1>🎉 Payment Successful!</h1>
 
       <p>
-        Learn practical strategies and tools to build and grow
-        your digital business.
+        Thank you for purchasing Digital Success Course.
       </p>
 
-      <div class="price">$15</div>
+      <p>
+        Your payment has been successfully completed.
+      </p>
 
-      <button id="buy-button">
-        Buy Now
-      </button>
+      <a class="course-button" href="index.html">
+        Access Your Course
+      </a>
 
     </div>
   </div>
-
-  <!-- Paddle.js -->
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-
-  <script>
-
-    // Paddle Sandbox
-    Paddle.Environment.set("sandbox");
-
-    // Paddle Client-side Token
-    Paddle.Initialize({
-      token: "YOUR_NEW_CLIENT_SIDE_TOKEN"
-    });
-
-    // Open Paddle Checkout
-    document.getElementById("buy-button").addEventListener("click", function () {
-
-      Paddle.Checkout.open({
-        items: [
-          {
-            priceId: "pri_01m3nwmrfszr9qaezcj1fyvz1g",
-            quantity: 1
-          }
-        ],
-
-        settings: {
-          successUrl:
-            "https://chammamgabed.github.io/digital-success-course/success.html"
-        }
-      });
-
-    });
-
-  </script>
 
 </body>
 </html>
